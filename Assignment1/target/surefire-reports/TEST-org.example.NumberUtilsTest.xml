@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.example.NumberUtilsTest" time="0.081" tests="17" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.example.NumberUtilsTest" time="0.094" tests="30" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -18,7 +18,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Users\lmedi\.jdks\corretto-1.8.0_442\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\lmedi\AppData\Local\Temp\surefire1694948792637314961\surefirebooter-20250217181256191_3.jar C:\Users\lmedi\AppData\Local\Temp\surefire1694948792637314961 2025-02-17T18-12-54_837-jvmRun1 surefire-20250217181256191_1tmp surefire_0-20250217181256191_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\lmedi\AppData\Local\Temp\surefire2013710065050144584\surefirebooter-20250217204555828_3.jar C:\Users\lmedi\AppData\Local\Temp\surefire2013710065050144584 2025-02-17T20-45-55_487-jvmRun1 surefire-20250217204555828_1tmp surefire_0-20250217204555828_2tmp"/>
     <property name="surefire.test.class.path" value="C:\Users\lmedi\IdeaProjects\Assignment1\target\test-classes;C:\Users\lmedi\IdeaProjects\Assignment1\target\classes;C:\Users\lmedi\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\lmedi\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\lmedi\.m2\repository\org\assertj\assertj-core\3.27.2\assertj-core-3.27.2.jar;C:\Users\lmedi\.m2\repository\net\bytebuddy\byte-buddy\1.15.11\byte-buddy-1.15.11.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\lmedi"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\lmedi\AppData\Local\Temp\surefire1694948792637314961\surefirebooter-20250217181256191_3.jar;C:\\Users\\lmedi\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.12\\org.jacoco.agent-0.8.12-runtime.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\lmedi\AppData\Local\Temp\surefire2013710065050144584\surefirebooter-20250217204555828_3.jar;C:\\Users\\lmedi\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.12\\org.jacoco.agent-0.8.12-runtime.jar"/>
     <property name="sun.boot.class.path" value="C:\Users\lmedi\.jdks\corretto-1.8.0_442\jre\lib\resources.jar;C:\Users\lmedi\.jdks\corretto-1.8.0_442\jre\lib\rt.jar;C:\Users\lmedi\.jdks\corretto-1.8.0_442\jre\lib\sunrsasign.jar;C:\Users\lmedi\.jdks\corretto-1.8.0_442\jre\lib\jsse.jar;C:\Users\lmedi\.jdks\corretto-1.8.0_442\jre\lib\jce.jar;C:\Users\lmedi\.jdks\corretto-1.8.0_442\jre\lib\charsets.jar;C:\Users\lmedi\.jdks\corretto-1.8.0_442\jre\lib\jfr.jar;C:\Users\lmedi\.jdks\corretto-1.8.0_442\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -62,21 +62,34 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="testEmptyInputLeft" classname="org.example.NumberUtilsTest" time="0.006"/>
+  <testcase name="testEmptyInputLeft" classname="org.example.NumberUtilsTest" time="0.005"/>
+  <testcase name="testNoLeadingZeroes" classname="org.example.NumberUtilsTest" time="0.0"/>
   <testcase name="testEmptyInputRight" classname="org.example.NumberUtilsTest" time="0.0"/>
+  <testcase name="testSingleDigitAddition" classname="org.example.NumberUtilsTest" time="0.0"/>
   <testcase name="testLeadingZeroRemoval" classname="org.example.NumberUtilsTest" time="0.0"/>
-  <testcase name="testNullInputRight" classname="org.example.NumberUtilsTest" time="0.0"/>
+  <testcase name="testEmptyLists" classname="org.example.NumberUtilsTest" time="0.0"/>
+  <testcase name="testNullInputRight" classname="org.example.NumberUtilsTest" time="0.004"/>
+  <testcase name="testLeftLongerThanRight" classname="org.example.NumberUtilsTest" time="0.0"/>
   <testcase name="testLeftDigitNegative" classname="org.example.NumberUtilsTest" time="0.0"/>
   <testcase name="testExplicitZeroWithEmpty" classname="org.example.NumberUtilsTest" time="0.0"/>
   <testcase name="testRightDigitNegative" classname="org.example.NumberUtilsTest" time="0.0"/>
+  <testcase name="testNoCarryAtEnd" classname="org.example.NumberUtilsTest" time="0.0"/>
   <testcase name="testCarryCondition" classname="org.example.NumberUtilsTest" time="0.0"/>
+  <testcase name="testRightLongerThanLeft" classname="org.example.NumberUtilsTest" time="0.001"/>
   <testcase name="testInvalidInputLeft" classname="org.example.NumberUtilsTest" time="0.0"/>
+  <testcase name="testEqualLengthLists" classname="org.example.NumberUtilsTest" time="0.001"/>
   <testcase name="testAllValidDigits" classname="org.example.NumberUtilsTest" time="0.0"/>
+  <testcase name="testVaryingLengths" classname="org.example.NumberUtilsTest" time="0.0"/>
+  <testcase name="testMinimumAndMaximumValidDigits" classname="org.example.NumberUtilsTest" time="0.0"/>
   <testcase name="testInvalidDigitInInputs" classname="org.example.NumberUtilsTest" time="0.0"/>
+  <testcase name="testCarryAtMiddleOnly" classname="org.example.NumberUtilsTest" time="0.0"/>
   <testcase name="testNullInputBoth" classname="org.example.NumberUtilsTest" time="0.0"/>
-  <testcase name="testNullInputLeft" classname="org.example.NumberUtilsTest" time="0.001"/>
+  <testcase name="testNullInputLeft" classname="org.example.NumberUtilsTest" time="0.0"/>
   <testcase name="testInvalidInputRight" classname="org.example.NumberUtilsTest" time="0.0"/>
   <testcase name="testLeftDigitTooLarge" classname="org.example.NumberUtilsTest" time="0.0"/>
-  <testcase name="testValidInputs" classname="org.example.NumberUtilsTest" time="0.0"/>
+  <testcase name="testCarryExactlyOne" classname="org.example.NumberUtilsTest" time="0.0"/>
+  <testcase name="testCarryPropagation" classname="org.example.NumberUtilsTest" time="0.0"/>
+  <testcase name="testSingleElementLists" classname="org.example.NumberUtilsTest" time="0.0"/>
+  <testcase name="testValidInputs" classname="org.example.NumberUtilsTest" time="0.001"/>
   <testcase name="testRightDigitTooLarge" classname="org.example.NumberUtilsTest" time="0.0"/>
 </testsuite>

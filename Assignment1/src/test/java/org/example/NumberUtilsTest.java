@@ -156,6 +156,13 @@ public class NumberUtilsTest {
             // Expected exception
         }
     }
+    @Test
+    public void testEqualLengthLists() {
+        List<Integer> left = Arrays.asList(1, 2, 3);
+        List<Integer> right = Arrays.asList(4, 5, 6);
+        List<Integer> expectedOutput = Arrays.asList(5, 7, 9); // 123 + 456 = 579
+        assertEquals(expectedOutput, NumberUtils.add(left, right));
+    }
 
     @Test
     public void testRightDigitTooLarge() {
@@ -167,5 +174,96 @@ public class NumberUtilsTest {
         } catch (IllegalArgumentException e) {
             // Expected exception
         }
+    }
+    /////////////////////////////////////////////////////////
+    @Test
+    public void testLeftLongerThanRight() {
+        List<Integer> left = Arrays.asList(9, 2, 3); // Extra digit in left
+        List<Integer> right = Arrays.asList(4, 2);
+        List<Integer> expectedOutput = Arrays.asList(9, 6, 5); // 923 + 42 = 965
+        assertEquals(expectedOutput, NumberUtils.add(left, right));
+    }
+    @Test
+    public void testEmptyLists() {
+        List<Integer> left = Collections.emptyList();
+        List<Integer> right = Collections.emptyList();
+        List<Integer> expectedOutput = Collections.emptyList();
+        assertEquals(expectedOutput, NumberUtils.add(left, right));
+    }
+    @Test
+    public void testSingleElementLists() {
+        List<Integer> left = Arrays.asList(0);
+        List<Integer> right = Arrays.asList(0);
+        List<Integer> expectedOutput = Arrays.asList(0);
+        assertEquals(expectedOutput, NumberUtils.add(left, right));
+    }
+    @Test
+    public void testVaryingLengths() {
+        List<Integer> left = Arrays.asList(1, 2);
+        List<Integer> right = Arrays.asList(1, 2, 3);
+        List<Integer> expectedOutput = Arrays.asList(1, 3, 5);
+        assertEquals(expectedOutput, NumberUtils.add(left, right));
+    }
+
+    @Test
+    public void testRightLongerThanLeft() {
+        List<Integer> left = Arrays.asList(4, 2);
+        List<Integer> right = Arrays.asList(9, 2, 3); // Extra digit in right
+        List<Integer> expectedOutput = Arrays.asList(9, 6, 5); // 42 + 923 = 965
+        assertEquals(expectedOutput, NumberUtils.add(left, right));
+    }
+
+    @Test
+    public void testSingleDigitAddition() {
+        List<Integer> left = Arrays.asList(4); // Single digit
+        List<Integer> right = Arrays.asList(3); // Single digit
+        List<Integer> expectedOutput = Arrays.asList(7); // 4 + 3 = 7
+        assertEquals(expectedOutput, NumberUtils.add(left, right));
+    }
+
+    @Test
+    public void testMinimumAndMaximumValidDigits() {
+        List<Integer> left = Arrays.asList(0, 9);  // 09
+        List<Integer> right = Arrays.asList(9, 0); // 90
+        List<Integer> expectedOutput = Arrays.asList(9, 9); // 09 + 90 = 99
+        assertEquals(expectedOutput, NumberUtils.add(left, right));
+    }
+    @Test
+    public void testCarryPropagation() {
+        List<Integer> left = Arrays.asList(9, 9, 9); // 999
+        List<Integer> right = Arrays.asList(1);      // +1
+        List<Integer> expectedOutput = Arrays.asList(1, 0, 0, 0); // 999 + 1 = 1000
+        assertEquals(expectedOutput, NumberUtils.add(left, right));
+    }
+
+    @Test
+    public void testCarryExactlyOne() {
+        List<Integer> left = Arrays.asList(5, 5);
+        List<Integer> right = Arrays.asList(5, 5);
+        List<Integer> expectedOutput = Arrays.asList(1, 1, 0); // 55 + 55 = 110
+        assertEquals(expectedOutput, NumberUtils.add(left, right));
+    }
+    @Test
+    public void testNoCarryAtEnd() {
+        List<Integer> left = Arrays.asList(5, 5);
+        List<Integer> right = Arrays.asList(4, 4);
+        List<Integer> expectedOutput = Arrays.asList(9, 9); // 55 + 44 = 99 (carry never goes beyond)
+        assertEquals(expectedOutput, NumberUtils.add(left, right));
+    }
+
+    @Test
+    public void testCarryAtMiddleOnly() {
+        List<Integer> left = Arrays.asList(9, 5);
+        List<Integer> right = Arrays.asList(1, 5);
+        List<Integer> expectedOutput = Arrays.asList(1, 1, 0); // 95 + 15 = 110
+        assertEquals(expectedOutput, NumberUtils.add(left, right));
+    }
+
+    @Test
+    public void testNoLeadingZeroes() {
+        List<Integer> left = Arrays.asList(1, 2, 3);  // 123
+        List<Integer> right = Arrays.asList(4, 5, 6); // 456
+        List<Integer> expectedOutput = Arrays.asList(5, 7, 9); // 123 + 456 = 579
+        assertEquals(expectedOutput, NumberUtils.add(left, right));
     }
 }
